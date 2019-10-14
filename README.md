@@ -17,10 +17,12 @@ Definition
 * Movie IDs and Ratings also hard coded
 
 Basically;
+
 First I created discovery server and I published 
 
 2 Spring Boot Application(
      1.ratings-data-service: http://localhost:8083/ratingsdata/users/{userId} returns list of ratings
+     
      2.movie-info-service: http://localhost:8082/movies/{movieId} returns movies details
 )
 
