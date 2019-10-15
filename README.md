@@ -46,7 +46,7 @@
 
 * http://localhost:8083/ratingsdata/users/{userId}: list 2 hardcoded film id and ratings, user id does not matter
 
-* http://localhost:8888/{microservice}/default: gives {microservice}'s configuration 
+* http://localhost:8888/{microservice}/default: This is a CONFIG SERVER and it gives {microservice}'s configuration 
 
 
 
