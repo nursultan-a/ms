@@ -24,16 +24,8 @@ public class RatingDataResource {
     @RequestMapping("/users/{userId}")
     public UserRating getUserRating(@PathVariable("userId") String movieId){
         List<Rating> ratings = Arrays.asList(
-                new Rating("1", 4),
-                new Rating("2", 0),
-                new Rating("3", 9),
-                new Rating("4", 7),
-                new Rating("5", 5),
-                new Rating("6", 10),
-                new Rating("7", 1),
-                new Rating("8", 2),
-                new Rating("9", 6),
-                new Rating("10", 8)
+                new Rating("101", 4),
+                new Rating("201", 0)
         );
         UserRating userRating = new UserRating();
         userRating.setUserRating(ratings);
