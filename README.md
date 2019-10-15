@@ -38,15 +38,17 @@
   
 # Examples
 
-* http://localhost:8082/movies/{movieId} : it will give movieID, name and description if the given {movieId} have in themoviedb.org
+* http://ip:8082/movies/{movieId} : it will give movieID, name and description if the given {movieId} have in themoviedb.org
 
-* http://localhost:8761/ : Eureka
+* http://ip:8761/ : Eureka
 
-* http://localhost:8081/catalog/{userId}: list 2 film from themomviedb.org according to given movieid from ratings-data-microservice
+* http://ip:8081/catalog/{userId}: list 2 film from themomviedb.org according to given movieid from ratings-data-microservice
 
-* http://localhost:8083/ratingsdata/users/{userId}: list 2 hardcoded film id and ratings, user id does not matter
+* http://ip:8083/ratingsdata/users/{userId}: list 2 hardcoded film id and ratings, user id does not matter
 
-* http://localhost:8888/{microservice}/default: This is a CONFIG SERVER and it gives {microservice}'s configuration 
+* http://ip:8888/{microservice}/default: This is a CONFIG SERVER and it gives {microservice}'s configuration 
+
+(ip=localhost)
 
 
 
