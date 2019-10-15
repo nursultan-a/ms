@@ -1,47 +1,57 @@
-# ms
-
-#There is 
-  * 3 Spring boot applications(each of them are stanalone and Eureka Client/Microservice):
-      1. Movie Catalog Service(movie-catalog-service)
-      2. Movie Info Service(movie-info-service)
-      3. Movie Rating(ratings-data-service)
-  * 1 Discovery Server(Name Server: Eureka Server)
+# Microservices
 
 
+* Movie Info Service: 
+   Input: Movie ID
+   Output: Movie Details
+   (Movie Details comes from themoviedb.og site by external call in this microservice)
+   
+ 
+* Rating Data Service: 
+   Input: User ID
+   Output: Movie IDs and Movie raitings
+   
+   (user id does not matter, there is only 2 hard coded rated movie)
+   
+   
+* Movie Catalog Service: 
+   Input: User ID
+   Output: Movie list with details
+   
+   (user id does not matter)  
 
 
-#Definition
+
+# Config Server
+
+*Config servers github url: https://github.com/nursultan-a/config.git
 
 
-* Lists Users watched momvies with its own rating,
 
-* Didn't configured config server: Configuration is hard coded
+* I made external rest request to get Movie Details from the https://www.themoviedb.org on movie-info-service microservice
+   example: curl http://localhost:8082/movies/{movieId}
+   more about the api: https://www.themoviedb.org/settings/api
+   
+   
+* Config server's github url: https://github.com/nursultan-a/config.git
+  it has 3 .properties file for 3 microservice, all 3 microservice gets its port number from here, basically it shows that config server is working
+  
+  
+  
+# Examples
+* http://localhost:8082/movies/{movieId} : it will give movieID, name and description if the given {movieId} have in themoviedb.org
+* http://localhost:8761/ : Eureka
+* http://localhost:8081/catalog/{userId}: list 2 film from themomviedb.org according to given movieid from ratings-data-microservice
+* http://localhost:8083/ratingsdata/users/{userId}: list 2 hardcoded film id and ratings, user id does not matter
+* http://localhost:8888/{microservice}/default: gives {microservice}'s configuration 
 
-* Movie IDs and Ratings also hard coded
 
 
 
 #Basically;
 
 
-First I created discovery server and I published 
 
-2 Spring Boot Application(
-
-     1.ratings-data-service: http://localhost:8083/ratingsdata/users/{userId} returns list of ratings
-     
-     2.movie-info-service: http://localhost:8082/movies/{movieId} returns movies details
-)
-
-
-as microservice to DISCOVERY SERVER using Eureka Client.
-
- Then I have microservices located 
- 
- in another microservice 'movie-catalog-service'(http://localhost:8081/catalog/{userId}) using Eureka Client.
- 
- 
- Lists each move that user watched with details(from movie-info-service) and reitings(from ratings-data-service).
  
   
  
